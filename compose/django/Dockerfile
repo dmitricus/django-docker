@@ -4,9 +4,11 @@ FROM python:3.8.12
 ENV PYTHONUNBUFFERED 1
 ENV TZ=Europe/Moscow
 # Устанавливает рабочий каталог контейнера — "app"
-WORKDIR /webapp
-# Копирует все файлы из нашего локального проекта в контейнер
-COPY ./src /webapp
+WORKDIR /src
+# файлы из нашего локального проекта в контейнер
+RUN mkdir /src
+ADD . /src/
+
 # Запускает команду pip install для всех библиотек, перечисленных в requirements.txt
 RUN poetry install \
     && pip install -r /requirements/main.txt --no-cache-dir \
