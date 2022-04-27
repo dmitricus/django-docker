@@ -16,7 +16,7 @@ services:
        ports:
            - 8010:8010
        volumes:
-         - collected_static:/src/collected_static:ro
-         - media:/src/media:ro
-         - logs:/src/logs:ro
+#         - collected_static:/src/collected_static:ro
+#         - media:/src/media:ro
+#         - logs:/src/logs:ro
          - .:/src
